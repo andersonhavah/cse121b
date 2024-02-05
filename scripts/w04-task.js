@@ -65,6 +65,7 @@ myProfile.placesLived.forEach( placeLived => {
     let dtElement = document.createElement("dt");
     dtElement.textContent = placeLived.place;
 
+    // Create HTML <dd> element and set its text content to the 'length' property
     let ddElement = document.createElement('dd');
     ddElement.textContent = placeLived.length;
 
