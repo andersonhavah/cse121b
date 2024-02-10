@@ -13,14 +13,14 @@ const displayTemples = (temples) => {
     // Iterate over each temple in the temples array
     temples.forEach(temple => {
         // Create an HTML <article> element
-        let articleElement = document.createElement("article");
+        const articleElement = document.createElement("article");
 
         // Create an HTML <h3> element and add the temple's templeName property
-        let headingElement = document.createElement("h3");
+        const headingElement = document.createElement("h3");
         headingElement.textContent = temple.templeName;
 
         // Create an HTML <img> element and add the temple's src and alt attributes
-        let imageElement = document.createElement("img");
+        const imageElement = document.createElement("img");
         imageElement.setAttribute('src', temple.imageUrl);
         imageElement.setAttribute('alt', temple.location);
 
@@ -58,7 +58,7 @@ const filterTemples = (temples) => {
     reset();
 
     // Obtain the value of the HTML element with the ID of filtered
-    let filter = document.querySelector('#filtered').value;
+    const filter = document.querySelector('#filtered').value;
 
     switch(filter) {
         case 'utah':
@@ -83,4 +83,5 @@ document.querySelector("#filtered").addEventListener("change", () => {
     filterTemples(templeList); 
 });
 
+// Call getTemples to start fetching and displaying the data
 getTemples();
