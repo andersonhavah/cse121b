@@ -9,20 +9,21 @@ const cityInputElement = document.getElementById("city-input");
 
 const formElement = document.querySelector("form");
 
-
+// Add an event listener to the form element
 formElement.addEventListener("submit", (event) => {
     event.preventDefault();
     const cityValue = cityInputElement.value;
     getWeatherData(cityValue);
 });
 
-
+// This function helps fetch weather data from openweathermap api 
 async function getWeatherData(cityValue) {
     try {
         const response = await fetch(
             `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${apikey}&units=metric`
         );
 
+        // Throw an error message when the fetch is not successful
         if (!response.ok) {
             throw new Error("Network failure. Please reload the page.");
         }
